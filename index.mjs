@@ -1,7 +1,7 @@
 import fs from "node:fs";
 import path from "node:path";
 
-const files_lagu = [
+const filesLagu = [
     {
         artist: "madison beer",
         music: [
@@ -55,16 +55,16 @@ const files_lagu = [
 ];
 
 
-function generateLagu(folder_target) {
+function generateLagu(folderTarget) {
 
-    if (!fs.existsSync(folder_target)) {
-        fs.mkdirSync(folder_target);
+    if (!fs.existsSync(folderTarget)) {
+        fs.mkdirSync(folderTarget);
     }
 
-    files_lagu.forEach(({ artist, music: musics }) => {
+    filesLagu.forEach(({ artist, music: musics }) => {
         musics.forEach((music) => {
             fs.writeFileSync(
-                path.join(folder_target, `${artist} - ${music}.mp4`),
+                path.join(folderTarget, `${artist} - ${music}.mp4`),
                 ""
             );
         });
